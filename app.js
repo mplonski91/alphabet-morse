@@ -1,12 +1,15 @@
 const yargs = require("yargs");
-const { logic } = require("./logic");
+const chalk = require("chalk");
+const { MorseConverter } = require("./logic");
 
+const log = console.log;
 const argv = yargs.argv;
 const word = argv.word;
+const converter = new MorseConverter(word);
 
 //node app.js --word="text"
 if (word) {
-  logic(word);
+  log(converter.convertText());
 } else {
-  console.log("Enter the word using command 'word'");
+  log(chalk.red("Enter the word using command 'word'"));
 }
