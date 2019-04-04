@@ -27,6 +27,7 @@ class MorseConverter {
     return reveseCode;
   }
 
+  // Results rendering method
   convertText() {
     let convertedText = "";
     const splitWords = this.breakingTheWord();
